@@ -40,3 +40,6 @@
 - src: https://github.com/kofonfor/ansible-role-k8s-zalando-postgres-operator.git
   version: 46701615830b1786e99c4770c072d8d3b6c24054
   name: k8s-zalando-postgres-operator
+- src: https://github.com/kofonfor/ansible-role-k8s-zalando-postgres-cluster.git
+  version: 7bd30128757134b715a1282e0007a8f2a67ca510
+  name: k8s-zalando-postgres-cluster

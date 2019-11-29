@@ -10,7 +10,11 @@
   become: true
   vars:
     - k8s_namespace: "postgres"
+    - zalando_postgresql_cluster_name: "acid-postgres"
+    - zalando_postgresql_user: "zuzer"
+    - zalando_postgresql_database: "zuzerdb"
   roles:
     - role: k8s-namespace
     - role: k8s-rancher-local-path-provisioner
     - role: k8s-zalando-postgres-operator
+    - role: k8s-zalando-postgres-cluster
