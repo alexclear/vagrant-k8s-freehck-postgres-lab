@@ -13,6 +13,7 @@
     - zalando_postgresql_cluster_name: "acid-postgres"
     - zalando_postgresql_user: "zuzer"
     - zalando_postgresql_database: "zuzerdb"
+    - zalando_postgresql_storage_class: "local-path"
   roles:
     - role: k8s-namespace
     - role: k8s-rancher-local-path-provisioner
