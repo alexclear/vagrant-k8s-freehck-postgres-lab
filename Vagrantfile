@@ -132,6 +132,7 @@ Vagrant.configure("2") do |config|
     kube5.vm.network "private_network", ip: $KUBE5_IP
 
     kube5.vm.provider :virtualbox do |v, override|
+      override.vm.synced_folder ".", "/vagrant"
       v.gui = false
       v.customize ["modifyvm", :id, "--cpus", $KUBE5_NUM_CPUS]
       v.customize ["modifyvm", :id, "--memory", $KUBE5_MEM_MBS]
@@ -140,7 +141,7 @@ Vagrant.configure("2") do |config|
     end
 
     kube5.vm.provider :libvirt do |v, override|
-      config.vm.synced_folder ".", "/vagrant", type: "nfs"
+      override.vm.synced_folder ".", "/vagrant", type: "nfs"
       v.cpu_mode = 'custom'
       v.cpu_model = 'kvm64'
       v.volume_cache = 'writeback'
